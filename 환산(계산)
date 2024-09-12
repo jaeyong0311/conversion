@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    int i, t, C, M, N;
+    int cnt, unit[100];
+    
+    scanf("%d", &C);
+    
+    for(t=0;t<C;t++)
+    {
+        scanf("%d", &M);
+        scanf("%d", &N);
+        for(i=0;i<N;i++)
+        {
+            scanf("%d", &unit[i]);
+        }
+        cnt=0;
+        for(i=N-1;i>=0;i--)
+        {
+            cnt+= M/unit[i];
+            M%=unit[i];
+        }
+        if(M>0)
+            printf("-1\n");
+        else
+            printf("%d\n", cnt);
+    }
+    return 0;
+}
